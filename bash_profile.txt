@@ -1,0 +1,61 @@
+# RELOAD ON OSX: source ~/.bash_profile
+#alias reload_bash_rc='. ~/.bashrc'
+alias reload_bash_rc='source ~/.bash_profile'
+precond='[[ `pwd`/ = */hub/* ]] && echo Dont push hub from here! || '
+alias test=~/.scripts/echo.sh
+
+# Presets:
+export gitsudo=''
+
+# Common stuff:
+alias lah='ls -lAh'
+alias restore='tput rmcup'
+alias va='vagrant up && vagrant ssh'
+
+# Remove folder
+alias rmf='sudo rm -R '
+
+# Git shortcus:
+alias ad='git add -A'
+alias pus2=~/.scripts/pus2.sh
+alias pus3=~/.scripts/pus3.sh
+alias pus=$precond'git push'
+alias pul='git pull'
+alias pull='git pull'
+alias com=~/.scripts/com.sh
+alias st='git status'
+alias master='git checkout master'
+alias release='git checkout release'
+alias prod='git checkout prod'
+alias demo='git checkout demo'
+alias clean-prod='git checkout master;'$gitsudo'git branch -D prod;'$gitsudo'git checkout prod'
+
+# Push changes to Branches
+export gitbackup='echo `date`":"`pwd`":" >> /tmp/git_branches.log && git ls-remote --heads origin >> /tmp/git_branches.log && '
+alias Prod_pus=$gitbackup''$gitsudo'git push origin master:prod'
+alias Force_prod=$gitbackup''$gitsudo'git push origin +master:prod'
+alias Demo_pus=$gitbackup''$gitsudo'git push origin master:demo'
+alias Force_demo=$gitbackup''$gitsudo'git push origin +master:demo'
+alias Test_pus=$gitbackup''$gitsudo'git push origin master:test'
+alias Force_test=$gitbackup''$gitsudo'git push origin +master:test'
+
+# Edit hosts file (to add shortcuts to local ips)
+alias hosts='sudo vi /etc/hosts'
+
+# FS Shortcuts:
+alias srv='cd /srv'
+alias core='cd /srv/core/Core'
+alias cl='sudo vi config.local.php'
+alias cg='sudo vi /srv/core/Core/config.global.php'
+
+# FS:
+# Change owner:
+alias owngit='sudo chown $USER -R . && sudo chown $USER -R .git '
+alias own='sudo chown $USER -R '
+# Make executable:
+alias ex='sudo chmod a+x '
+
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+#eval $(thefuck --alias)
