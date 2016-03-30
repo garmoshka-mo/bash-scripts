@@ -22,6 +22,7 @@ alias pus3=~/.scripts/pus3.sh
 alias pus=$precond'git push'
 alias pul='git pull'
 alias pull='git pull'
+alias rebase=~/.scripts/rebase.sh
 alias com=~/.scripts/com.sh
 alias st='git status'
 alias master='git checkout master'
@@ -54,8 +55,3 @@ alias owngit='sudo chown $USER -R . && sudo chown $USER -R .git '
 alias own='sudo chown $USER -R '
 # Make executable:
 alias ex='sudo chmod a+x '
-
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-#eval $(thefuck --alias)
