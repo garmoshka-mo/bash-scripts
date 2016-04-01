@@ -23,6 +23,7 @@ alias pus=$precond'git push'
 alias pul='git pull'
 alias pull='git pull'
 alias rebase=~/.scripts/rebase.sh
+alias rst2='git reset --hard HEAD'
 alias com=~/.scripts/com.sh
 alias st='git status'
 alias master='git checkout master'
