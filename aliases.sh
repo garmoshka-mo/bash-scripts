@@ -1,4 +1,4 @@
-alias aliases_v='echo 1'
+alias aliases-v='echo 1'
 
 case "$OSTYPE" in
 
@@ -11,7 +11,7 @@ case "$OSTYPE" in
   *)        echo "unknown: $OSTYPE" ;;
 esac
 
-alias update_aliases='~/.scripts/install.sh && reload'
+alias update-aliases='~/.scripts/install.sh && reload'
 
 # Common stuff:
 alias lah='ls -lAh'
