@@ -3,7 +3,7 @@ alias aliases-v='echo 1'
 case "$OSTYPE" in
 
   # Ubuntu
-  linux*)   alias reload'. ~/.bashrc' ;;
+  linux*)   alias reload='. ~/.bashrc' ;;
 
   # OS X
   darwin*)  alias reload='source ~/.bash_profile' ;;
