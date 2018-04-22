@@ -6,15 +6,14 @@ curl https://raw.githubusercontent.com/garmoshka-mo/bash-scripts/master/aliases.
 case "$OSTYPE" in
 
   # Ubuntu
-  linux*)   FILE='. ~/.bashrc' ;;
+  linux*)   FILE=~/.bashrc ;;
 
   # OS X
-  darwin*)  FILE='source ~/.bash_profile' ;;
+  darwin*)  FILE=~/.bash_profile ;;
 
   *)        echo "unknown: $OSTYPE" ;;
 esac
-grep 'aliases.sh' "$FILE" || (echo "
 
-source ~/.scripts/aliases.sh" >> $FILE)
+grep 'aliases.sh' $FILE || printf "\n\nsource ~/.scripts/aliases.sh" >> $FILE
 
 echo 'Aliases updated'
