@@ -3,15 +3,15 @@ alias aliases_v='echo 1'
 case "$OSTYPE" in
 
   # Ubuntu
-  linux*)   alias reload_aliases='. ~/.bashrc' ;;
+  linux*)   alias reload'. ~/.bashrc' ;;
 
   # OS X
-  darwin*)  alias reload_aliases='source ~/.bash_profile' ;;
+  darwin*)  alias reload='source ~/.bash_profile' ;;
 
   *)        echo "unknown: $OSTYPE" ;;
 esac
 
-alias reload='~/.scripts/install.sh && reload_aliases'
+alias update_aliases='~/.scripts/install.sh && reload'
 
 # Common stuff:
 alias lah='ls -lAh'
