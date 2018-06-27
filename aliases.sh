@@ -41,6 +41,7 @@ alias pus='git push'
 alias pul='git pull'
 alias pull='git pull'
 alias che='git checkout'
+alias com='git commit -m'
 alias rebase=~/.scripts/rebase.sh
 alias master='git checkout master'
 alias develop='git checkout develop'
