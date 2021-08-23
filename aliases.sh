@@ -37,9 +37,9 @@ alias xuecker='docker-machine start; eval "$(docker-machine env default)"'
 
 # Git
 alias st='git status'
-alias pus='git push'
-alias pul='git pull'
-alias pull='git pull'
+alias pus='if [ -f ./push.sh ]; then ./push.sh; else git push; fi'
+alias pul='if [ -f ./pull.sh ]; then ./pull.sh; else git pull; fi'
+alias pull='if [ -f ./pull.sh ]; then ./pull.sh; else git pull; fi'
 alias che='git checkout'
 alias com='git commit -m'
 alias rebase=~/.scripts/rebase.sh
