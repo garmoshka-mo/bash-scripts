@@ -4,6 +4,8 @@ curl https://raw.githubusercontent.com/garmoshka-mo/bash-scripts/master/aliases.
 
 curl https://raw.githubusercontent.com/garmoshka-mo/bash-scripts/master/scripts/rebase.sh > ~/.scripts/rebase.sh
 chmod a+x ~/.scripts/rebase.sh
+curl https://raw.githubusercontent.com/garmoshka-mo/bash-scripts/master/scripts/git_cmd.sh > ~/.scripts/git_cmd.sh
+chmod a+x ~/.scripts/git_cmd.sh
 
 case "$OSTYPE" in
 
