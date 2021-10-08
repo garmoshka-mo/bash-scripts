@@ -41,6 +41,7 @@ alias pus='~/.scripts/git_cmd.sh push'
 alias pul='~/.scripts/git_cmd.sh pull'
 alias pull='~/.scripts/git_cmd.sh pull'
 alias che='git checkout'
+alias che2='f(){   git symbolic-ref HEAD refs/heads/$@;   unset -f f; }; f'
 alias com='git commit -m'
 alias rebase=~/.scripts/rebase.sh
 alias master='git checkout master'
