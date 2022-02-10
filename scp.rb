@@ -6,6 +6,11 @@ server = ARGV[1]
 from = ARGV[2]
 to = ARGV[3]
 
+home_dir = File.expand_path "~"
+if from.start_with? home_dir
+  from = "~" + from[ home_dir.length .. ]
+end
+
 if to
   to = "#{server}:#{to}"
 else
