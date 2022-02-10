@@ -6,16 +6,28 @@ server = ARGV[1]
 from = ARGV[2]
 to = ARGV[3]
 
-home_dir = File.expand_path "~"
-if from.start_with? home_dir
-  from = "~" + from[ home_dir.length .. ]
+HOME_DIR = File.expand_path "~"
+def restore_tilda path
+  if path.start_with? HOME_DIR
+    "~" + path[ HOME_DIR.length .. ]
+  else
+    path
+  end  
 end
 
-if to
+if to and File.exist?(ARGV[2])
+  
+  STDERR.puts "🔼 Uploading to #{server}"
+  to = restore_tilda to 
   to = "#{server}:#{to}"
+  
 else
+  
+  from = restore_tilda from 
+  STDERR.puts "🔻 Downloading from #{server}"
   from = "#{server}:#{from}"
-  to = "."
+  to ||= "."
+
 end
 
 puts <<-SH
