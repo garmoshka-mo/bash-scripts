@@ -16,7 +16,7 @@ chmod a+x ~/.scripts/scp.sh
 case "$OSTYPE" in
 
   # Ubuntu
-  linux*)   FILE=~/.bashrc ;;
+  linux*)   FILE=~/.bash_profile ;;
 
   # OS X
   darwin*)  FILE=~/.zshrc ;;
