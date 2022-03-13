@@ -1,4 +1,0 @@
-# Put to ~/.ssh/config
-
-ForwardAgent yes
-ServerAliveInterval 100
