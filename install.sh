@@ -1,8 +1,13 @@
-mkdir ~/.scripts
-curl https://raw.githubusercontent.com/garmoshka-mo/bash-scripts/master/install.sh > ~/.scripts/install.sh
-if ! [ -f ~/.scripts/aliases.sh ]; then
-  curl -L -o ~/.scripts/aliases.sh "https://www.dropbox.com/s/rlrrewx5nmo5euq/aliases.sh?dl=0"
+mkdir -p ~/.scripts
+
+aliases_file=~/.scripts/aliases.sh
+if [[ -L "$aliases_file" ]]
+then
+    echo "Skip symlink update $aliases_file"
+else
+  curl -L -o $aliases_file "https://www.dropbox.com/s/rlrrewx5nmo5euq/aliases.sh?dl=0"		
 fi
+
 curl https://raw.githubusercontent.com/garmoshka-mo/bash-scripts/master/scripts/rebase.sh > ~/.scripts/rebase.sh
 chmod a+x ~/.scripts/rebase.sh
 
@@ -16,14 +21,18 @@ chmod a+x ~/.scripts/scp.sh
 case "$OSTYPE" in
 
   # Ubuntu
-  linux*)   FILE=~/.bash_profile ;;
+  linux*)   
+		FILE=~/.bash_profile 
+		;;
 
   # OS X
-  darwin*)  FILE=~/.zshrc ;;
+  darwin*)  
+		FILE=~/.zshrc
+		;;
 
   *)        echo "unknown: $OSTYPE" ;;
 esac
 
 grep 'aliases.sh' $FILE || printf "\n\nsource ~/.scripts/aliases.sh" >> $FILE
 
-echo 'Aliases updated'
+echo '⏬ Aliases updated, now reload'
