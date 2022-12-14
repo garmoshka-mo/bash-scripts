@@ -6,6 +6,11 @@ server = ARGV[1]
 from = ARGV[2]
 to = ARGV[3]
 
+unless from 
+  puts "echo 'Usage: server-scp source_path [destination_path]'"
+  exit
+end
+
 HOME_DIR = File.expand_path "~"
 def restore_tilda path
   if path.start_with? HOME_DIR
