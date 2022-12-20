@@ -33,6 +33,6 @@ case "$OSTYPE" in
   *)        echo "unknown: $OSTYPE" ;;
 esac
 
-grep 'aliases.sh' $FILE || printf "\n\nsource ~/.scripts/aliases.sh" >> $FILE
+grep 'aliases.sh' $FILE || grep 'zshrc.sh' $FILE || printf "\n\nsource ~/.scripts/aliases.sh" >> $FILE
 
 echo '⏬ Aliases updated, now reload'
