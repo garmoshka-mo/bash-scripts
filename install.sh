@@ -3,7 +3,7 @@ mkdir -p ~/.scripts
 aliases_file=~/.scripts/aliases.sh
 if [[ -L "$aliases_file" ]]
 then
-    echo "Skip symlink update $aliases_file"
+  echo "Skip symlink update $aliases_file"
 else
   curl -L -o $aliases_file "https://www.dropbox.com/s/rlrrewx5nmo5euq/aliases.sh?dl=0"		
 fi
@@ -23,6 +23,7 @@ case "$OSTYPE" in
   # Ubuntu
   linux*)   
 		FILE=~/.bash_profile 
+		grep '.bash_profile' ~/.bashrc > /dev/null || printf "\n\nsource ~/.bash_profile" >> ~/.bashrc
 		;;
 
   # OS X
@@ -30,9 +31,12 @@ case "$OSTYPE" in
 		FILE=~/.zshrc
 		;;
 
-  *)        echo "unknown: $OSTYPE" ;;
+  *)        
+		echo "unknown: $OSTYPE" 
+		;;
 esac
 
-grep 'aliases.sh' $FILE || grep 'zshrc.sh' $FILE || printf "\n\nsource ~/.scripts/aliases.sh" >> $FILE
+grep 'aliases.sh' $FILE > /dev/null || grep 'zshrc.sh' $FILE > /dev/null || \
+	printf "\n\nsource ~/.scripts/aliases.sh" >> $FILE
 
 echo '⏬ Aliases updated, now reload'
