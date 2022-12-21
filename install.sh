@@ -22,8 +22,12 @@ case "$OSTYPE" in
 
   # Ubuntu
   linux*)   
-		FILE=~/.bash_profile 
-		grep '.bash_profile' ~/.bashrc > /dev/null || printf "\n\nsource ~/.bash_profile" >> ~/.bashrc
+		FILE=~/.bashrc # It seems like simploer to delete .bash_profile and only use .bashrc
+		# FILE=~/.bash_profile
+		# if [ -f ~/.bash_profile ]
+		# then
+		# 	grep '.bash_profile' ~/.bashrc > /dev/null || printf "\n\nsource ~/.bash_profile" >> ~/.bashrc
+		# fi
 		;;
 
   # OS X
