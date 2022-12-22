@@ -7,7 +7,7 @@ from = ARGV[2]
 to = ARGV[3]
 
 unless from 
-  puts "echo 'Usage: server-scp source_path [destination_path]'"
+  puts "echo 'Usage: server-scp source_path [destination_path] \\nFolder will be downloaded to same local folder, auto-created if needed'"
   exit
 end
 

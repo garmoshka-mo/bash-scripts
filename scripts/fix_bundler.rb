@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'fileutils'
 
 load_paths = `ruby -e 'puts $LOAD_PATH'`
@@ -13,7 +14,7 @@ load_paths.split.each do |path|
     puts "Deleting #{target}"
     FileUtils.rm_rf target
   end
-  
+
 end
 
 Gem.paths.path.each do |path|
@@ -21,8 +22,10 @@ Gem.paths.path.each do |path|
   Dir[path_mask].each do |target|
     puts "Deleting #{target}"
     FileUtils.rm_rf target
-  end  
+  end
 end
+puts "✅ buggy bundler removed"
 
-puts "✅ bundler fixed"
-
+puts "Installing stable bundler ..."
+puts `gem install bundler:1.17.3`
+puts "✅ stable bundler installed"
