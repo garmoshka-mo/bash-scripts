@@ -1,3 +1,6 @@
+set -e
+set -o pipefail
+
 mkdir -p ~/.scripts
 
 aliases_file=~/.scripts/aliases.sh
@@ -5,7 +8,7 @@ if [[ -L "$aliases_file" ]]
 then
   echo "Skip symlink update $aliases_file"
 else
-  curl -L -o $aliases_file "https://www.dropbox.com/s/rlrrewx5nmo5euq/aliases.sh?dl=0"		
+  curl -L -o $aliases_file "https://www.dropbox.com/s/rlrrewx5nmo5euq/aliases.sh?dl=0" --http1.1		
 fi
 
 curl https://raw.githubusercontent.com/garmoshka-mo/bash-scripts/master/scripts/rebase.sh > ~/.scripts/rebase.sh
