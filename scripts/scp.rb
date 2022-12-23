@@ -35,7 +35,9 @@ else
 
 end
 
+key = key == 'autokey' ? '' : "-o 'IdentitiesOnly=yes' -i #{key}"
+
 puts <<-SH
-scp -o "IdentitiesOnly=yes" -i #{key} -r \
+scp #{key} -r \
   "#{from}" "#{to}"
 SH
