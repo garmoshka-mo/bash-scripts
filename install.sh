@@ -11,6 +11,7 @@ else
   curl -L -o $aliases_file "https://www.dropbox.com/s/rlrrewx5nmo5euq/aliases.sh?dl=0" --http1.1		
 fi
 
+curl https://raw.githubusercontent.com/garmoshka-mo/bash-scripts/master/scripts/fix_bundler.rb > ~/.scripts/fix_bundler.rb
 curl https://raw.githubusercontent.com/garmoshka-mo/bash-scripts/master/scripts/rebase.sh > ~/.scripts/rebase.sh
 chmod a+x ~/.scripts/rebase.sh
 
