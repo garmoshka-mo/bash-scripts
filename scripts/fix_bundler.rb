@@ -23,6 +23,12 @@ Gem.paths.path.each do |path|
     puts "Deleting #{target}"
     FileUtils.rm_rf target
   end
+  
+  path_mask = File.join path, "specifications", "bundler*"
+  Dir[path_mask].each do |target|
+    puts "Deleting #{target}"
+    FileUtils.rm_rf target
+  end
 end
 puts "✅ buggy bundler removed"
 
